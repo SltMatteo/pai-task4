@@ -1,4 +1,4 @@
-#decaying_exploration_noise version
+#cosine decay on exploration noise version
 import random
 import time
 import numpy as np
