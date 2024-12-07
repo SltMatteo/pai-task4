@@ -150,8 +150,6 @@ class Agent:
         self.buffer = ReplayBuffer(self.buffer_size, self.obs_size, self.action_size, self.device)
         self.train_step = 0
 
-        #decay the exploration noise
-        self.exploration_noise = max(0.01, self.exploration_noise * 0.999)
     
     def train(self):
         '''
@@ -212,6 +210,9 @@ class Agent:
 
             for param, target_param in zip(self.actor.parameters(), self.actor_target.parameters()) : 
                 target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
+
+        #decay the exploration noise
+        self.exploration_noise = max(0.01, self.exploration_noise * 0.999)
 
         #####################################################################
 
