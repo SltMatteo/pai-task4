@@ -1,0 +1,4 @@
+Score for public evaluation: -52.63166666666666
+Deviation within seeds: 14.32318174231807
+Deviation across seeds: 40.69878232549197
+Time : 18.479981319109598 min

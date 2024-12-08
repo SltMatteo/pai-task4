@@ -96,7 +96,7 @@ class Agent:
 
     batch_size: int = 256
     gamma: float = 0.99  # MDP discount factor, 
-    exploration_noise: float = 0.1  # epsilon for epsilon-greedy exploration (Matteo's note: eps here is the sigma of the N(0, sigma) noise) 
+    exploration_noise: float = 0.15  # epsilon for epsilon-greedy exploration (Matteo's note: eps here is the sigma of the N(0, sigma) noise) 
     tau: float = 0.005 #idk 
     noise_clip: float = 0.5 #why not 
     actor_lr: float = 1e-4
@@ -212,7 +212,7 @@ class Agent:
                 target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
 
         #decay the exploration noise
-        self.exploration_noise = max(0.01, self.exploration_noise * 0.999)
+        self.exploration_noise = max(0.01, self.exploration_noise * 0.995)
 
         #####################################################################
 
