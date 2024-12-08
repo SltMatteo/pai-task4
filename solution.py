@@ -95,12 +95,12 @@ class Agent:
     # TODO: store and tune hyperparameters here
 
     batch_size: int = 256
-    gamma: float = 0.99  # MDP discount factor, 
-    exploration_noise: float = 0.1  # epsilon for epsilon-greedy exploration (Matteo's note: eps here is the sigma of the N(0, sigma) noise) 
-    tau: float = 0.005 #idk 
-    noise_clip: float = 0.5 #why not 
-    actor_lr: float = 1e-4
-    critic_lr: float = 1e-3
+    gamma: float = 0.9 # MDP discount factor, originally 0.99
+    exploration_noise: float = 0.09  # epsilon for epsilon-greedy exploration (Matteo's note: eps here is the sigma of the N(0, sigma) noise) originally 0.1
+    tau: float = 0.003 #idk originally 0.005
+    noise_clip: float = 0.4 #why not originally 0.5
+    actor_lr: float = 1e-3 #originally 1e-4
+    critic_lr: float = 1e-4 #originally 1e-3
     num_layers: int = 2 
     num_units: int = 256
 
