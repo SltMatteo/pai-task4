@@ -15,7 +15,7 @@ Dumped check file to /results/results_check.byte
 
 python solution.py: 
 
-Score for public evaluation: -49.49833333333333
-Deviation within seeds: 19.361383431874916
-Deviation across seeds: 32.55067943479317
-Time : 18.79302800099055 min
+Score for public evaluation: -54.69833333333334
+Deviation within seeds: 19.639049971958997
+Deviation across seeds: 22.73556050918179
+Time : 18.936050895849863 min

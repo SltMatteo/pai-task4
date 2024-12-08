@@ -214,7 +214,7 @@ class Agent:
 
 
         # cosine decay 
-        self.exploration_noise = max(0.1, self.exploration_noise * (1 + math.cos(math.pi * self.train_step / (self.total_train * 2))) / 2)
+        self.exploration_noise = self.exploration_noise * (1 + math.cos(math.pi * self.train_step / self.total_train)) / 2
         #####################################################################
 
     def get_action(self, obs, train):
