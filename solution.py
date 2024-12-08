@@ -265,7 +265,7 @@ if __name__ == '__main__':
         # seeding to ensure determinism
         seed = int(seed)
         print("\n Running seed: " + str(seed) + "\n") #Matteo
-        print(" currently running: cosine \n")
+        print(" currently running: main \n")
         for fn in [random.seed, np.random.seed, torch.manual_seed]:
             fn(seed)
         torch.backends.cudnn.deterministic = True
