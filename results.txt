@@ -1,3 +1,5 @@
+bash runner.sh: 
+
 Score (average test returns): -50.465333333333334
 Time : 53.419702943166094 min
 Evaluation of your private score:
@@ -8,3 +10,12 @@ Private score evaluated. It stays hidden.
 
 Congratulations, you beat the baseline in terms of public score. Your public score is -50.5
 Dumped check file to /results/results_check.byte
+
+---------------------------
+
+python solution.py: 
+
+Score for public evaluation: -49.49833333333333
+Deviation within seeds: 19.361383431874916
+Deviation across seeds: 32.55067943479317
+Time : 18.79302800099055 min
