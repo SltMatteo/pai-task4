@@ -8,7 +8,7 @@ import torch.optim as optim
 from gymnasium.utils import seeding
 from utils import ReplayBuffer, get_env, run_episode
 import copy 
-
+import math
 
 class MLP(nn.Module):
     '''
@@ -103,6 +103,7 @@ class Agent:
     critic_lr: float = 1e-3
     num_layers: int = 2 
     num_units: int = 256
+    total_train = 10000 # 50 * 200 
 
     #########################################################################
 
@@ -150,8 +151,6 @@ class Agent:
         self.buffer = ReplayBuffer(self.buffer_size, self.obs_size, self.action_size, self.device)
         self.train_step = 0
 
-        #decay the exploration noise
-        self.exploration_noise = max(0.01, self.exploration_noise * 0.999)
     
     def train(self):
         '''
@@ -213,6 +212,9 @@ class Agent:
             for param, target_param in zip(self.actor.parameters(), self.actor_target.parameters()) : 
                 target_param.data.copy_(self.tau * param.data + (1 - self.tau) * target_param.data)
 
+
+        # cosine decay 
+        self.exploration_noise = self.exploration_noise * (1 + math.cos(math.pi * self.train_step / self.total_train)) / 2 
         #####################################################################
 
     def get_action(self, obs, train):
