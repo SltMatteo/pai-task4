@@ -1,4 +1,4 @@
-# main version 
+# tweaking hyperparams (main) version  
 import random
 import time
 import numpy as np
@@ -265,7 +265,7 @@ if __name__ == '__main__':
         # seeding to ensure determinism
         seed = int(seed)
         print("\n Running seed: " + str(seed) + "\n") #Matteo
-        print(" currently running: main \n")
+        print(" currently running: hyperparams tweaking main \n")
         for fn in [random.seed, np.random.seed, torch.manual_seed]:
             fn(seed)
         torch.backends.cudnn.deterministic = True
