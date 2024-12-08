@@ -1,0 +1,10 @@
+Score (average test returns): -50.465333333333334
+Time : 53.419702943166094 min
+Evaluation of your private score:
+Running private evaluation for the baseline.
+Score (average test returns): -34.03
+Time : 45.95957970619202 min
+Private score evaluated. It stays hidden.
+
+Congratulations, you beat the baseline in terms of public score. Your public score is -50.5
+Dumped check file to /results/results_check.byte
