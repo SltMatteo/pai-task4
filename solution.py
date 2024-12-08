@@ -102,7 +102,7 @@ class Agent:
     actor_lr: float = 1e-3 #originally 1e-4
     critic_lr: float = 1e-4 #originally 1e-3
     num_layers: int = 2 
-    num_units: int = 256
+    num_units: int = 512
 
     #########################################################################
 
