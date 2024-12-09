@@ -97,12 +97,12 @@ class Agent:
     batch_size: int = 256
     gamma: float = 0.99  # MDP discount factor, 
     exploration_noise: float = 0.15  # epsilon for epsilon-greedy exploration (Matteo's note: eps here is the sigma of the N(0, sigma) noise) 
-    tau: float = 0.005 #idk 
+    tau: float = 0.05 #idk 
     noise_clip: float = 0.5 #why not 
     actor_lr: float = 1e-4
     critic_lr: float = 1e-3
-    num_layers: int = 2 
-    num_units: int = 256
+    num_layers: int = 4
+    num_units: int = 128
 
     #########################################################################
 
@@ -114,7 +114,7 @@ class Agent:
         # extract bounds of the action space
         self.action_low = torch.tensor(env.action_space.low).float()
         self.action_high = torch.tensor(env.action_space.high).float()
-        self.d = 2 
+        self.d = 1
 
         #####################################################################
         # TODO: initialize actor, critic and attributes
@@ -188,7 +188,12 @@ class Agent:
         critic2_loss.backward()
         self.critic2_optimizer.step()
         
-        actor_loss = -self.critic1(obs, self.actor(obs)).mean() 
+        
+        new_action = self.actor(obs)
+        current_Q1 = self.critic1(obs, new_action)
+        current_Q2 = self.critic2(obs, new_action)
+        current_Q  = torch.min(current_Q1, current_Q2)
+        actor_loss = -current_Q.mean() 
 
         # if self.train_step % 500 == 0 : 
         #     print("\n actor_loss :")
