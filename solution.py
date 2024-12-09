@@ -252,7 +252,7 @@ if __name__ == '__main__':
     WARMUP_EPISODES = 10  # initial episodes of uniform exploration
     TRAIN_EPISODES = 50  # interactive episodes
     TEST_EPISODES = 300  # evaluation episodes
-    save_video = False
+    save_video = True
     verbose = True
     seeds = np.arange(10)  # seeds for public evaluation
 
