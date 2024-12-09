@@ -1,4 +1,4 @@
-# main version 
+# main version -> this exact file passed the baseline with a score of -50.46 
 import random
 import time
 import numpy as np

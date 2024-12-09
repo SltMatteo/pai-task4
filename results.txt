@@ -1,3 +1,8 @@
+Score (average test returns): -50.465333333333334
+Time : 51.91764832735062 min
+Evaluation of your private score:
+Running private evaluation for the baseline.
+
 Score for public evaluation: -9.222999999999999
 Deviation within seeds: 6.8694565764294495
 Deviation across seeds: 17.565866107627915
